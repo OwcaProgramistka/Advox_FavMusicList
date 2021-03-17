@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.best {
+    @apply border-yellow-500;
+    @apply border-2;
+    @apply bg-gradient-to-r;
+    @apply from-yellow-500;
+    @apply to-blue-600;
+    @apply shadow-none;
+}

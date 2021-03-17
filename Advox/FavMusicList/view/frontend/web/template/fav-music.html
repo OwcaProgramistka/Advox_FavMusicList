@@ -1,0 +1,110 @@
+<div class="fav-music p-10 bg-blue-600 my-4 text-white flex flex-col">
+    <h3
+        data-bind="i18n: 'Your favourite Music List'"
+        class="
+            fav-music__heading
+            uppercase
+            leading-relaxed
+            tracking-wide
+            font-sans
+            text-center
+            text-5xl
+            text-white
+            mb-4
+        "
+    ></h3>
+    <form
+        data-bind="submit: handleSubmit"
+        class="fav-music__form flex flex-col mx-auto my-10"
+    >
+        <div class="fields max-w-screen-md">
+            <input
+                required
+                maxlength="20"
+                data-bind="
+                    attr:{placeholder: $t('Artist')},
+                    textInput: artist
+                "
+                class="fav-music__input mb-6 text-black"
+                type="text"
+            />
+            <input
+                required
+                maxlength="20"
+                data-bind="
+                    attr:{placeholder: $t('Album')},
+                    textInput: album,
+                    "
+                class="fav-music__input text-black border-transparent"
+                type="text"
+            />
+            <button
+                data-bind="i18n: 'Add to list'"
+                class="
+                    fav-music__button
+                    border-1
+                    border-transparent
+                    w-full
+                    py-2
+                    my-6
+                    bg-gray-800
+                    focus:outline-none
+                    hover:border-transparent
+                    hover:bg-yellow-500
+                    focus:bg-yellow-500
+                    focus:border-yellow-600
+                "
+                type="submit"
+            ></button>
+        </div>
+    </form>
+    <ul
+        data-bind="foreach: albumsList"
+        class="fav-music__list flex flex-row flex-wrap justify-center mx-auto max-w-screen-lg"
+    >
+        <li
+            data-bind="css: { best: isTheBest() }"
+            class="fav-music-list__list-item shadow w-80 m-4 p-4 border-2 border-transparent rounded bg-blue-700"
+        >
+            <p data-bind="text: artist" class="text-center"></p>
+            <p
+                data-bind="text: album"
+                class="text-center tracking-wider font-medium"
+            ></p>
+            <div class="actions flex justify-between">
+                <button
+                    data-bind="click: $parent.removeAlbum.bind($parent)"
+                    class="
+                        fav-music__button
+                        text-4xl
+                        border-transparent
+                        hover:bg-transparent
+                        focus:bg-transparent
+                        focus:border-transparent
+                        focus:text-white
+                        focus:outline-none
+                        hover:border-transparent
+                    "
+                >
+                    &times;
+                </button>
+                <button
+                    data-bind="click: $parent.setAsBest.bind($parent)"
+                    class="
+                        fav-music__button
+                        border-transparent
+                        text-4xl
+                        hover:bg-transparent
+                        focus:border-transparent
+                        focus:bg-transparent
+                        focus:text-white
+                        focus:outline-none
+                        hover:border-transparent
+                    "
+                >
+                    &#x2665;
+                </button>
+            </div>
+        </li>
+    </ul>
+</div>

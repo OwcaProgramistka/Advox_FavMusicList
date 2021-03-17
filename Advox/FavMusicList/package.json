@@ -1,0 +1,20 @@
+{
+  "name": "favMusicList",
+  "version": "1.0.0",
+  "description": "",
+  "main": "postcss.config.js",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.8",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "postcss ./view/frontend/web/css/main.css -o ./view/frontend/web/css/dist/main.css -w",
+    "build": "npx tailwindcss-cli@latest build ./view/frontend/web/css/main.css -o ./view/frontend/web/css/dist/main.css"
+  },
+  "author": "Aleksandra Wiktorzak",
+  "license": "ISC"
+}

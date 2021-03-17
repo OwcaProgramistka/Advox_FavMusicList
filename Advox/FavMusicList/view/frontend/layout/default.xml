@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Advox_FavMusicList::css/dist/main.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <referenceBlock name="main.content">
+            <block
+                after="-"
+                as="fav-music-list"
+                name="fav-music-list"
+                template="Advox_FavMusicList::fav-music.phtml"
+            />
+        </referenceBlock>
+    </body>
+</page>
